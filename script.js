@@ -27,5 +27,10 @@ video.addEventListener('play', () => {
     faceapi.draw.drawDetections(canvas, resizedDetections)
     faceapi.draw.drawFaceLandmarks(canvas, resizedDetections)
     faceapi.draw.drawFaceExpressions(canvas, resizedDetections)
+    const detections2 = await faceapi.detectAllFaces(video, new faceapi.TinyFaceDetectorOptions()).withFaceExpressions()
+    console.log(detections2[0].expressions);
+    console.log( '\n' );
   }, 100)
+  //var myArr = ["Google", "Taobao", "Runoob", "Facebook" ];
+  //console.log(myArr);
 })
